@@ -5,7 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "core": "*",
-    "SmartCar_IR": "github:robobyt/smartcarIR"
+    "SmartCar_IR": "github:robobyt/SmartCarIR"
   },
 
   "files": [
