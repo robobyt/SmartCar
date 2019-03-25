@@ -27,6 +27,13 @@ namespace smartcar {
         Car_Stop = 5,
     }
 
+    export enum LineSensor {
+        //% blockId="Left" block="Left"
+        Left = 1,
+        //% blockId="Right" block="Right"
+        Right = 2
+    }
+
     function Car_Stop() {
         pins.SCL.digitalWrite(false);
         pins.SDA.digitalWrite(false);
@@ -74,6 +81,19 @@ namespace smartcar {
             case CarState.Car_Left: Car_Left(); break;
             case CarState.Car_Right: Car_Right(); break;
             case CarState.Car_Stop: Car_Stop(); break;
+        }
+    }
+
+    //% weight=30
+    //% group="Line Sensor"
+    //% blockId=line_Sensor block="Line sensor|%side"
+    export function readLine(line: LineSensor): boolean {
+        if (line == LineSensor.Left) {
+            return pins.PWM.digitalRead();
+        } else if (line == LineSensor.Right) {
+            return pins.INT.digitalRead();
+        } else {
+            return false;
         }
     }
 
