@@ -61,7 +61,7 @@ namespace smartcar {
       WSerial()
         : serial(PIN(TX), PIN(RX))
         {
-          serial.baud((int)BaudRate::BaudRate9600);
+          serial.baud((int)BaudRate::BaudRate115200);
         }
   };
 
